@@ -9,18 +9,6 @@
 }
 /* Réinitialisation des paramètres de la page web */
 
-@media screen and (max-width:800px) {
-  /* Format Tablette */
-  * {
-    width: 100%;
-    padding: 0;
-  }
-  nav ul li {
-    display: inline-block;
-    margin-right: 30px;
-  }
-}
-
 /* -------------------------------------------------------------------------- */
 /*---------------------------------- BODY ----------------------------------- */
 /* -------------------------------------------------------------------------- */
@@ -30,6 +18,15 @@ body {
   font-size: 15px;
 }
 
+@media screen and (max-width: 640px) {
+  body {
+     display: flex;
+     flex-direction: column;
+     justify-content: center;
+   }
+ }
+ /* Format responsive téléphone */
+
 /* -------------------------------------------------------------------------- */
 /*--------------------------------- HEADER ---------------------------------- */
 /* -------------------------------------------------------------------------- */
@@ -37,38 +34,57 @@ body {
 h1 {
   color: #ffb3ba;
   font-family: 'Pacifico', cursive;
+  margin-left: 20px;
 }
+
+@media screen and (max-width: 640px) {
+  h1 {
+    color: #ffb3ba;
+    font-family: 'Pacifico', cursive;
+    margin-right: 10px;
+  }
+}
+/* Format responsive téléphone */
 
 .violet {
   color: #cb8fff;
 }
 /* Style du point sur le logo */
 
-header {
+ .container {
   height: 120px;
 }
-/* Hauteur du compartiement Header */
+/* Hauteur du container */
 
-header h1 {
+ .container h1 {
   float: left;
   margin-top: 32px;
 }
 /* Flottement à gauche du logo */
 
-header nav {
+nav {  
   float: right;
   margin-right: 50px;
   padding-top: 50px;
 }
 /* Flottement à droite de la navbar + ajustement en haut et à droite*/
 
-header nav ul li {
+nav ul li {
   display: inline-block;
-  margin-right: 30px;
+  margin-right: 10px;
 }
 /* La navbar alignée sur une ligne */
 
-header nav ul li a {
+@media screen and (max-width: 640px) {
+  nav {
+    display: inline-block;
+    margin: 0 auto;
+    padding-top: 10px;
+  }
+}
+/* Format Responsive téléphone */
+
+ nav ul li a {
   font-family: 'Indie Flower', cursive;
   color: #0086ad;
   font-weight: bold;
@@ -76,10 +92,21 @@ header nav ul li a {
 }
 /* Font + couleur appliquée sur la navbar */
 
+@media screen and (max-width: 640px) {
+  nav ul li a {
+    font-family: 'Indie Flower', cursive;
+    color: #0086ad;
+    font-weight: bold;
+    font-size: 15px;
+  }
+}
+/* Format Responsive téléphone */
+
 a {
   text-decoration: none;
 } 
 /* Supprime le soulignement des liens de la navnar */
+
 a:hover {
 color: #cb8fff;
 }
@@ -90,7 +117,7 @@ ul {
 /* Supprime les puces de la navbar */
 
 .container {
-  width: 1850px;
+  width: 0 auto;
   margin: 0 auto;
 }
 
@@ -104,6 +131,15 @@ ul {
   border-radius: 20px;
 }
 
+@media screen and (max-width: 640px) {
+  #image_principale{
+  height: 200px;
+  background: url(./images/bluewool.jpg) center;
+  border-radius: 20px;
+  }
+}
+/* Format Responsive téléphone */
+
 #image_principale h2 {
   font-family: 'Varela Round', sans-serif;
   color: #0086ad;
@@ -111,6 +147,17 @@ ul {
   text-align: center;
   padding: 50px 0 40px 0;
 }
+
+@media screen and (max-width: 640px) {
+  #image_principale h2 {
+  font-family: 'Varela Round', sans-serif;
+  color: #0086ad;
+  font-size: 20px;
+  text-align: center;
+  padding: 25px 0 25px 0;
+  }
+}
+/* Format Responsive téléphone */
 
 .transparent {
   background: rgba(255, 255, 255, 0.5);
