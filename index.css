@@ -1,0 +1,105 @@
+/* -------------------------------------------------------------------------- */
+/* ------------------------------- GENERAL ---------------------------------- */
+/* -------------------------------------------------------------------------- */
+
+* {
+  margin: 0;
+  padding: 0;
+}
+/* Réinitialisation des paramètres de la page web */
+
+/* -------------------------------------------------------------------------- */
+/*---------------------------------- BODY ----------------------------------- */
+/* -------------------------------------------------------------------------- */
+
+body {
+  font-family: 'Indie Flower', cursive;
+  font-size: 15px;
+}
+
+/* -------------------------------------------------------------------------- */
+/*--------------------------------- HEADER ---------------------------------- */
+/* -------------------------------------------------------------------------- */
+
+h1 {
+  color: #ffb3ba;
+  font-family: 'Pacifico', cursive;
+}
+
+.violet {
+  color: #cb8fff;
+}
+/* Style du point sur le logo */
+
+header {
+  height: 120px;
+}
+/* Hauteur du compartiement Header */
+
+header h1 {
+  float: left;
+  margin-top: 32px;
+}
+/* Flottement à gauche du logo */
+
+header nav {
+  float: right;
+  margin-right: 50px;
+  padding-top: 50px;
+}
+/* Flottement à droite de la navbar + ajustement en haut et à droite*/
+
+header nav ul li {
+  display: inline-block;
+  margin-right: 30px;
+}
+/* La navbar alignée sur une ligne */
+
+header nav ul li a {
+  font-family: 'Indie Flower', cursive;
+  color: #0086ad;
+  font-weight: bold;
+  font-size: 20px;
+}
+/* Font + couleur appliquée sur la navbar */
+
+a {
+  text-decoration: none;
+} 
+/* Supprime le soulignement des liens de la navnar */
+a:hover {
+color: #cb8fff;
+}
+
+ul {
+  list-style: none;
+}
+/* Supprime les puces de la navbar */
+
+.container {
+  width: 1850px;
+  margin: 0 auto;
+}
+
+/* -------------------------------------------------------------------------- */
+/*------------------------------- MAIN IMAGE -------------------------------- */
+/* -------------------------------------------------------------------------- */
+
+#image_principale {
+  height: 480px;
+  background: url(./images/bluewool.jpg) center;
+  border-radius: 20px;
+}
+
+#image_principale h2 {
+  font-family: 'Varela Round', sans-serif;
+  color: #0086ad;
+  font-size: 50px;
+  text-align: center;
+  padding: 50px 0 40px 0;
+}
+
+.transparent {
+  background: rgba(255, 255, 255, 0.5);
+  width: 
+}
