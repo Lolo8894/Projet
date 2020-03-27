@@ -53,6 +53,8 @@ h1 {
 
  .container {
   height: 120px;
+  width: 0 auto;
+  margin: 0 auto;
 }
 /* Hauteur du container */
 
@@ -69,12 +71,6 @@ nav {
 }
 /* Flottement à droite de la navbar + ajustement en haut et à droite*/
 
-nav ul li {
-  display: inline-block;
-  margin-right: 10px;
-}
-/* La navbar alignée sur une ligne */
-
 @media screen and (max-width: 640px) {
   nav {
     display: inline-block;
@@ -83,6 +79,13 @@ nav ul li {
   }
 }
 /* Format Responsive téléphone */
+
+nav ul li {
+  display: inline-block;
+  margin-right: 10px;
+}
+/* La navbar alignée sur une ligne */
+
 
  nav ul li a {
   font-family: 'Indie Flower', cursive;
@@ -115,11 +118,6 @@ ul {
   list-style: none;
 }
 /* Supprime les puces de la navbar */
-
-.container {
-  width: 0 auto;
-  margin: 0 auto;
-}
 
 /* -------------------------------------------------------------------------- */
 /*------------------------------- MAIN IMAGE -------------------------------- */
