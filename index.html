@@ -7,6 +7,7 @@
     <link href="https://fonts.googleapis.com/css?family=Pacifico&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Indie+Flower&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Varela+Round&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 
     <title>Les créations de Lyline</title>
 </head>
@@ -52,9 +53,16 @@
 
     <br/><br/>
                             <!-- CARROUSEL D'IMAGES  -->
-  <section id="carrousel">    
-      <h2>Ici il y aura un Carrousel (enfin, si j'y arrive...^^')</h2>      
-  </section>
+    
+    <section id="slider">
+      <figure>
+        <img src="images/borderlands-3-couv.jpg" alt="">
+        <img src="images/Borderlands-3-Moxxis-Heist-Key-Art.jpg" alt="">
+        <img src="images/Borderlands-3-trailer-Moze.jpg" alt="">
+        <img src="images/borderlands-3-couv.jpg" alt="">
+      </figure>
+    </section>
+  
 
     <br/><br/>
                           <!-- FORMULAIRE DE CONTACT -->  
@@ -64,23 +72,28 @@
   <div class="contact">
   <form method="post"><br/>
     <p class="input">
-      <label>Nom :</label><br/>
+      <label for="name">Nom :</label><br/>
       <input type="text" name="nom" placeholder="Votre nom" required></p>
     <p class="commentaires">Message d'erreur</p>
     <br/>
-    <p class="input"><label>Prénom :</label><br/>
-    <input type="text" name="prenom" placeholder="Votre prénom" required></p>
+
+    <p class="input">
+      <label for="firstname">Prénom :</label><br/>
+      <input type="text" name="prenom" placeholder="Votre prénom" required></p>
     <p class="commentaires">Message d'erreur</p>
     <br/>
 
-    <p class="input"><label>Mail :</label><br/>
-    <input type="email" name="email" placeholder="exemple@mail.com" required></p>
+    <p class="input">
+      <label for="email">Mail :</label><br/>
+      <input type="email" name="email" placeholder="exemple@mail.com" required></p>
     <p class="commentaires">Message d'erreur</p>
     <br/>
 
-    <p class="input"><label>Votre message :</label><br/>
-    <textarea name="message" placeholder="Votre message ici" required></textarea></p>   
+    <p class="input">
+      <label>Votre message :</label><br/>
+      <textarea name="message" placeholder="Votre message ici" required></textarea></p>   
     <br/>
+
     <input class="envoyer" value="Envoyer" type="submit">
   </form>
   </div>
