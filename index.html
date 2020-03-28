@@ -55,24 +55,30 @@
   </section>
 
     <br/><br/>
-                              <!-- FORMULAIRE DE CONTACT -->      
-  <form class="contact-mail" action="#" method="post">
-    <p>Intéressé ? Contactez-moi !</p>
+                          <!-- FORMULAIRE DE CONTACT -->  
+                          
+<section id="formulaire">
+    <h3>Intéressé ? Contactez-moi !</h3> <br/>
+  <div class="contact">
+  <form method="post">
+    <p class="input"><label>Nom :</label><br/>
+    <input type="text" name="nom" placeholder="Votre nom" required></p><br/>
+
+    <p class="input"><label>Prénom :</label><br/>
+    <input type="text" name="prenom" placeholder="Votre prénom" required></p><br/>
+
+    <p class="input"><label>Mail :</label><br/>
+    <input type="email" name="email" placeholder="exemple@mail.com" required></p><br/>
+
+    <p class="input"><label>Votre message :</label><br/>
+    <textarea name="message" placeholder="Votre message ici" required></textarea></p>   
     <br/>
-    <p>
-      <label for="nom">Votre nom</label>
-      <input type="text" id="nom" name="Nom"/>
-    </p> 
-
-    <p>
-      <label for="prenom">Votre prénom</label>
-      <input type="text" id="prenom" name="prenom"/>
-    </p>      
-      <input type="submit" value="Envoyer">
-
+    <input class="envoyer" value="Envoyer" type="submit">
   </form>
+  </div>
+</section>
     <br/><br/>
-                                  <!-- FOOTER -->
+                <!-- FOOTER -->
   <footer>    
       <h2>Ici il y aura le footer</h2> 
   </footer>    
