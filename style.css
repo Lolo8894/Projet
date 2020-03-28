@@ -205,7 +205,14 @@ h3 {
   font-size: 18px;
   font-weight: bold;
 }
-/* Label mis dans des paragraphes */
+/* Label mis dans des paragraphes de la classe "input" */
+
+.commentaires {
+  color: brown;
+  font-size: 18px;
+  font-style: italic;
+}
+/* Messages d'erreurs mis dans des paragraphes de la classe "commentaires" */
 
 input[type="text"] {
   padding: 5px;
