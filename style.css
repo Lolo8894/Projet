@@ -130,7 +130,7 @@ p {
   color: #777;
   font-family: 'Varela Round', sans-serif;
   font-size: 23px;
-  text-align: justify;  
+  text-align: center;  
   margin-right: 150px;
   margin-left: 150px;
 }
@@ -169,12 +169,12 @@ p {
   background: #fff;
   border-radius: 30px;
   text-align: center;
-  width: 500px;
+  width: 590px;
   margin: 0 auto;
   font-family: 'Varela Round', sans-serif;
   color: #777;
   font-size: 15px;
-  box-shadow: 0 0 8px 0 #c39797; 
+  box-shadow: 0 0px 3px 3px #c39797; 
 }
 
 h3 {
@@ -184,13 +184,14 @@ h3 {
 }
 
 .contact {
-  padding: 0px auto;
+  border: 0.07px solid #CFACAC;
   background-color:#c39797;
 }
 
 .input {
-  color: #0086ad;
+  color: #0A4589;
   font-size: 18px;
+  font-weight: bold;
 }
 /* Label mis dans des paragraphes */
 
@@ -207,7 +208,7 @@ input[type="email"] {
 }
 
 textarea {
-  padding: 13px;
+  padding: 0px;
   width: 300px;
   height: 300px;
   font-size: 15px;
@@ -217,17 +218,29 @@ textarea {
 /* Pour styliser les inputs (ou champs de saisie de type texte) */
 
 .envoyer {
-  padding: 1px 3px;
   width: 100px;
-  margin: 0 auto;
-  line-height: 36px;
-  font-size: 20px;  
-  color: #fff;
-  background-color: #cb8fff;  
+  margin-bottom: 21px;
+  line-height: 36px; 
   text-align: center;
-  border-radius: 4px;  
+  color:#777;
+  font-size:18px;
+  font-weight: bold;
+  font-family: 'Varela Round', sans-serif;
+  background:#fff;
+  padding: 8px;
+  border-radius: 9px 24px;
+  box-shadow: 3px 3px 3px 0px rgba(10, 8, 8, 0.99); 
 }
 /* Styliser le bouton "Envoyer" */
+
+.envoyer:hover {
+  background: #0A4589;
+  color: #fff;
+  font-family: 'Varela Round', sans-serif;
+  border: 1px solid grey;
+  box-shadow: 3px 3px 3px 0px #fff;
+}
+/* Styliser le bouton "Envoyer" au survol */
 
 /* -------------------------------------------------------------------------- */
 /*---------------------------------- FOOTER --------------------------------- */
