@@ -31,15 +31,14 @@ body {
   height: 120px; /*Hauteur du container contenant logo + navbar */
   position:sticky;
   top: 0;
-  background: #fff;
+  background-color:rgba(255, 255, 255, 0.9);
 }
 /* Position fixe de la navbar avec Sticky + ajustement hauteur + largeur + ajout background blanc. */
 
 #logo {
-  color: #ffb3ba;
   font-family: 'Pacifico', cursive;
   margin-left: 20px;
-  height: 120px;
+  height: 80px;
   float: left;
   margin-top: 32px;
 }
@@ -59,9 +58,9 @@ nav {
 
 nav ul li {
   display: inline-block;
-  margin-right: 12px;
+  margin-right: 20px;
 }
-/* La navbar alignée sur une ligne */
+/* La navbar alignée sur une ligne + Espacement entre les éléments de la nav*/
 
 
 nav ul li a {
@@ -72,13 +71,24 @@ nav ul li a {
 }
 /* Font + couleur appliquée sur la navbar */
 
+.couleurs {
+  font-size: 32px;
+  color: #fa8072;
+}
+/* Style des points sur chaque élément de la nav */
+
 a {
+  text-decoration: none;
+  color: #ffb3ba;
+}
+
+.nav {
   text-decoration: none;
 } 
 /* Supprime le soulignement des liens de la navnar */
 
-a:hover {
-  color: #cb8fff;
+.nav:hover {
+  color: #4ca3dd;
 }
 
 ul {
@@ -91,7 +101,7 @@ ul {
 /* -------------------------------------------------------------------------- */
 
 #image_principale {
-  height: 480px;
+  height: 380px;
   background: url(./images/bluewool.jpg) center;
   border-radius: 20px;
 }
@@ -230,6 +240,7 @@ textarea {
   font-family: 'Varela Round', sans-serif;
   background:#fff;
   padding: 8px;
+  cursor: pointer; 
   border-radius: 9px 24px;
   box-shadow: 3px 3px 3px 0px rgba(10, 8, 8, 0.99); 
 }
@@ -237,6 +248,7 @@ textarea {
 
 .envoyer:hover {
   background: #0A4589;
+  margin-bottom: 19px;
   color: #fff;
   font-family: 'Varela Round', sans-serif;
   border: 1px solid grey;
