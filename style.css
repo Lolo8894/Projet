@@ -1,5 +1,5 @@
 /* -------------------------------------------------------------------------- */
-/* ------------------------------- GENERAL ---------------------------------- */
+/* ---------------------------- CSS 3 - GENERAL ----------------------------- */
 /* -------------------------------------------------------------------------- */
 
 * {
@@ -16,14 +16,14 @@
 /* -------------------------------------------------------------------------- */
 
 body {
-  font-family: 'Indie Flower', cursive;
+  font-family: 'Varela Round', sans-serif;
   font-size: 15px;
   background: #f5f5f5;
 }
 /* Style par défaut si pas de style précis appliqué + background général en gris très clair. */
 
 /* -------------------------------------------------------------------------- */
-/*-----------------------------HEADER - NAVIGATION -------------------------- */
+/*----------------------------- HEADER - NAVIGATION ------------------------- */
 /* -------------------------------------------------------------------------- */
 
 .container {
@@ -107,7 +107,6 @@ ul {
 }
 
 #image_principale h2 {
-  font-family: 'Varela Round', sans-serif;
   color: #0086ad;
   font-size: 50px;
   text-align: center;
@@ -140,7 +139,6 @@ h2 {
 
 p {
   color: #777;
-  font-family: 'Varela Round', sans-serif;
   font-size: 23px;
   text-align: center;  
   margin-right: 150px;
@@ -167,7 +165,6 @@ p {
   margin: 0 auto;
   background: #fff;
   min-width: 480px;
-  font-family: 'Varela Round', sans-serif;
   font-size: 23px;
   overflow: hidden;    
   box-shadow: 0 0 7px 0 #cb8fff; 
@@ -217,7 +214,6 @@ img {
   text-align: center;
   width: 590px;
   margin: 0 auto;
-  font-family: 'Varela Round', sans-serif;
   color: #777;
   font-size: 15px;
   box-shadow: 0 0px 3px 3px #c39797; 
@@ -225,7 +221,6 @@ img {
 
 h3 {
   color: #777;
-  font-family: 'Varela Round', sans-serif;
   font-size: 21px;
 }
 
@@ -234,12 +229,12 @@ h3 {
   background-color:#c39797;
 }
 
-.input {
+.champs {
   color: #0A4589;
   font-size: 18px;
   font-weight: bold;
 }
-/* Label mis dans des paragraphes de la classe "input" */
+/* Label mis dans des paragraphes de la classe "champs" */
 
 .commentaires {
   color: brown;
@@ -267,8 +262,13 @@ textarea {
   font-size: 15px;
   resize: none;
   border: 1px solid #777;
+  font-family: 'Varela Round', sans-serif;
 }
 /* Pour styliser les inputs (ou champs de saisie de type texte) */
+
+.rouge {
+  color: brown;
+}
 
 .envoyer {
   width: 100px;
@@ -278,7 +278,6 @@ textarea {
   color:#777;
   font-size:18px;
   font-weight: bold;
-  font-family: 'Varela Round', sans-serif;
   background:#fff;
   padding: 8px;
   cursor: pointer; 
@@ -291,11 +290,23 @@ textarea {
   background: #0A4589;
   margin-bottom: 19px;
   color: #fff;
-  font-family: 'Varela Round', sans-serif;
   border: 1px solid grey;
   box-shadow: 3px 3px 3px 0px #fff;
 }
 /* Styliser le bouton "Envoyer" au survol */
+
+.merci {
+  color: #0A4589;
+  font-weight: bold;
+  font-size: 17px;
+}
+
+.info-requises {
+  color: #0A4589;
+  font-style: italic;
+  font-weight: bold;
+  font-size: 18px;
+}
 
 /* -------------------------------------------------------------------------- */
 /*---------------------------------- FOOTER --------------------------------- */
@@ -307,7 +318,6 @@ footer {
   margin: 0 auto;
   background: #fff;
   min-width: 480px;
-  font-family: 'Varela Round', sans-serif;
   font-size: 23px;
   box-shadow: 0 0 7px 0 #cb8fff; 
 }
