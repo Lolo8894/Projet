@@ -3,15 +3,60 @@
   -------------------------------------------------------------------------->
 
 <?php
-  $prenom = $nom = $mail = $message ="";
-
-  if ($_SERVER["REQUEST_METHOD"] == "POST")
-  {
+  $prenom = $nom = $email = $message ="";
+  $prenomError = $nomError = $emailError = $messageError ="";
+  $isSuccess = false;
+      // isSuccess est un booléen et vérifie si la condition est fausse.
+    if($_SERVER["REQUEST_METHOD"] == "POST")
+    {
       $prenom = verifyInput($_POST["prenom"]);
       $nom = verifyInput($_POST["nom"]);
       $email = verifyInput($_POST["email"]);
       $message = verifyInput($_POST["message"]);
-  }
+
+      // verifyInput est une sécurité du code quant à la saisie des champs.
+
+      if(empty($nom)) {
+
+        $nomError = "Donnes-moi ton nom s'il te plaît ^_^";
+        $isSuccess = false;
+
+      }
+
+      if(empty($prenom)) {
+
+        $prenomError = "Donnes-moi ton prénom s'il te plaît ^_^";
+        $isSuccess = false;
+
+      }
+
+      if(!isEmail($email)) {
+
+        $emailError = "Donnes-moi ton email pour que je puisse te répondre ^_^";
+        $isSuccess = false;
+
+      } // (!) signifie n'est pas un mail valide.
+
+      if(empty($message)) {
+
+        $messageError = "Tu n'es pas très bavard à ce que je vois ! ;-)";
+        $isSuccess = false;
+
+      }
+
+      if($isSuccess) {
+
+        // Envoi du mail.
+
+      }
+  
+    }
+
+  function isEmail($var) {
+
+    return filter_var($var, FILTER_VALIDATE_EMAIL);
+
+  } // vérifie si mail valide.
 
   function verifyInput($var) {
 
@@ -109,35 +154,34 @@
   <form method="post" action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>" role="form"><br/>
     <p class="champs">
       <label for="nom"><span class="rouge">*</span>Nom :</label><br/>
-      <input type="text" name="nom" placeholder="Votre nom" value="<?php echo $nom ?>" required></p>
-    <p class="commentaires">Message d'erreur</p>
+      <input type="text" name="nom" placeholder="Votre nom" value="<?php echo $nom ?>" ></p>
+    <p class="commentaires"><?php echo $nomError; ?></p>
     <br/>
 
     <p class="champs">
       <label for="prenom"><span class="rouge">*</span>Prénom :</label><br/>
-      <input type="text" name="prenom" placeholder="Votre prénom" value="<?php echo $prenom ?>" required></p>
-    <p class="commentaires">Message d'erreur</p>
+      <input type="text" name="prenom" placeholder="Votre prénom" value="<?php echo $prenom ?>" ></p>
+    <p class="commentaires"><?php echo $prenomError; ?></p>
     <br/>
-
-    <!-- required pour préciser qu'une info est requise avec une info-bulle. -->
 
     <p class="champs">
       <label for="email"><span class="rouge">*</span>Mail :</label><br/>
-      <input type="email" name="email" placeholder="exemple@mail.com" value="<?php echo $email ?>" required></p>
-    <p class="commentaires">Message d'erreur</p>
+      <input type="text" name="email" placeholder="exemple@mail.com" value="<?php echo $email ?>"></p>
+      <p class="commentaires"><?php echo $emailError; ?></p>
     <br/>
 
     <p class="champs">
       <label><span class="rouge">*</span>Votre message :</label><br/>
-      <textarea name="message" placeholder="Votre message ici" value="<?php echo $message ?>" required></textarea></p>
-      <p class="commentaires">Message d'erreur</p> 
+      <textarea name="message" placeholder="Votre message ici" value="<?php echo $message ?>"></textarea></p>
+      <p class="commentaires"><?php echo $messageError; ?></p>  
     <br/>
 
     <input class="envoyer" value="Envoyer" type="submit">  
     <br/>
     <p class="info-requises"><span class="rouge">*</span>Ces informations sont requises</p>
     <br/>
-    <p class="merci">Votre message a bien été envoyé ! Merci de m'avoir contacté.</p>
+
+    <p class="merci" style="display:<?php if($isSuccess) echo 'block'; else echo 'none'; ?>">Votre message a bien été envoyé ! Merci de m'avoir contacté.</p>
     <br/>
   </form>
   </div>
