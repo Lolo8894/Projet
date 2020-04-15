@@ -16,6 +16,8 @@
 
       // verifyInput est une sécurité du code quant à la saisie des champs.
 
+      $isSuccess = true;
+
       if(empty($nom)) {
 
         $nomError = "Donnes-moi ton nom s'il te plaît ^_^";
