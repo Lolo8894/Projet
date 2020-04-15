@@ -296,8 +296,8 @@ textarea {
 /* Styliser le bouton "Envoyer" au survol */
 
 .merci {
-  color: #0A4589;
-  font-weight: bold;
+  color: #fff;
+/*  font-weight: bold;*/
   font-size: 17px;
 }
 

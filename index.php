@@ -7,28 +7,44 @@
   $prenomError = $nomError = $emailError = $messageError ="";
   $isSuccess = false;
       // isSuccess est un booléen et vérifie si la condition est fausse.
+  $emailTo = "lauramassaro.ks@gmail.com";
+
     if($_SERVER["REQUEST_METHOD"] == "POST")
     {
       $prenom = verifyInput($_POST["prenom"]);
       $nom = verifyInput($_POST["nom"]);
       $email = verifyInput($_POST["email"]);
       $message = verifyInput($_POST["message"]);
-
       // verifyInput est une sécurité du code quant à la saisie des champs.
-
       $isSuccess = true;
+      // condition de référence.
+      $emailText = "";
 
       if(empty($nom)) {
+        // Si vide alors affiche le message d'erreur.
 
         $nomError = "Donnes-moi ton nom s'il te plaît ^_^";
         $isSuccess = false;
 
       }
 
+      else {
+
+        $emailText .= "nom: $nom\n";
+
+      } // .= : Concaténation
+        // Tous les else qui vont suivre vont permettre de configurer l'envoi du message vers une boite mail (voir ci-dessus $emailTo)
+
       if(empty($prenom)) {
 
         $prenomError = "Donnes-moi ton prénom s'il te plaît ^_^";
         $isSuccess = false;
+
+      }
+
+      else {
+
+        $emailText .= "prenom: $prenom\n";
 
       }
 
@@ -39,6 +55,12 @@
 
       } // (!) signifie n'est pas un mail valide.
 
+      else {
+
+        $emailText .= "email : $email\n";
+
+      }
+
       if(empty($message)) {
 
         $messageError = "Tu n'es pas très bavard à ce que je vois ! ;-)";
@@ -46,9 +68,21 @@
 
       }
 
+      else {
+
+        $emailText .= "message : $message\n";
+
+      }
+
       if($isSuccess) {
 
-        // Envoi du mail.
+        $headers = "From: $prenom $nom <$email>\r\nReply-To: $email";
+          // \r\n : Pour aller à la ligne entre De : et Répondre à :
+        mail( $emailTo, "Un message provenant du site Les créations de Lyline", $emailText, $headers );
+          // Fonction qui permet l'envoi du mail.
+
+        $prenom = $nom = $email = $message ="";
+          // Permet de remettre les champs à blanc quand message est envoyé.
 
       }
   
@@ -94,7 +128,7 @@
 
     <title>Les créations de Lyline</title>
 </head>
-                                  BODY
+                                  <!-- BODY -->
 <body> 
                            <!-- HEADER - NAVIGATION -->
   
@@ -181,7 +215,7 @@
     <input class="envoyer" value="Envoyer" type="submit">  
     <br/>
     <p class="info-requises"><span class="rouge">*</span>Ces informations sont requises</p>
-    <br/>
+    <br><br>
 
     <p class="merci" style="display:<?php if($isSuccess) echo 'block'; else echo 'none'; ?>">Votre message a bien été envoyé ! Merci de m'avoir contacté.</p>
     <br/>
