@@ -1,39 +1,29 @@
-<!---------------------------------------------------------------------------
-  ---------------------------------- PHP 7 ----------------------------------
-  -------------------------------------------------------------------------->
+<!--------------------------------------------------------------------
+  ---------------------------------- PHP 7 ---------------------------
+  ------------------------------------------------------------------->
+
+<!----------------- CREATION DU FORMULAIRE DE CONTACT --------------->
 
 <?php
   $prenom = $nom = $email = $message ="";
   $prenomError = $nomError = $emailError = $messageError ="";
-  $isSuccess = false;
-      // isSuccess est un booléen et vérifie si la condition est fausse.
+  $isSuccess = false;      
   $emailTo = "lauramassaro.ks@gmail.com";
+
+// isSuccess est un booléen et vérifie si la condition est fausse.
 
     if($_SERVER["REQUEST_METHOD"] == "POST")
     {
       $prenom = verifyInput($_POST["prenom"]);
       $nom = verifyInput($_POST["nom"]);
       $email = verifyInput($_POST["email"]);
-      $message = verifyInput($_POST["message"]);
-      // verifyInput est une sécurité du code quant à la saisie des champs.
-      $isSuccess = true;
-      // condition de référence.
+      $message = verifyInput($_POST["message"]);     
+      $isSuccess = true;      
       $emailText = "";
-
-      if(empty($nom)) {
-        // Si vide alors affiche le message d'erreur.
-
-        $nomError = "Donnes-moi ton nom s'il te plaît ^_^";
-        $isSuccess = false;
-
-      }
-
-      else {
-
-        $emailText .= "nom: $nom\n";
-
-      } // .= : Concaténation
-        // Tous les else qui vont suivre vont permettre de configurer l'envoi du message vers une boite mail (voir ci-dessus $emailTo)
+        
+ // verifyInput est une sécurité du code quant à la saisie des champs.
+ // condition de référence.
+ // $_SERVER = Variable Superglobale server 
 
       if(empty($prenom)) {
 
@@ -44,20 +34,40 @@
 
       else {
 
-        $emailText .= "prenom: $prenom\n";
+        $emailText .= "Prenom: $prenom\n";
 
       }
+        
+// .= : Concaténation
+// Tous les else qui vont suivre vont permettre de configurer l'envoi du message vers une boite mail (voir ci-dessus $emailTo). La condition sera true (= vraie).
+        
+      if(empty($nom)) {
+          
+// Si vide alors affiche le message d'erreur.
+
+        $nomError = "Donnes-moi ton nom s'il te plaît ^_^";
+        $isSuccess = false;
+
+      }
+
+      else {
+
+        $emailText .= "Nom: $nom\n"; 
+
+      } 
+// \n pour aller à la ligne
 
       if(!isEmail($email)) {
 
         $emailError = "Donnes-moi ton email pour que je puisse te répondre ^_^";
         $isSuccess = false;
 
-      } // (!) signifie n'est pas un mail valide.
+      } 
+// (!) signifie n'est pas un mail valide.
 
       else {
 
-        $emailText .= "email : $email\n";
+        $emailText .= "Email : $email\n";
 
       }
 
@@ -70,19 +80,20 @@
 
       else {
 
-        $emailText .= "message : $message\n";
+        $emailText .= "Message : $message\n";
 
       }
 
       if($isSuccess) {
 
         $headers = "From: $prenom $nom <$email>\r\nReply-To: $email";
-          // \r\n : Pour aller à la ligne entre De : et Répondre à :
-        mail( $emailTo, "Un message provenant du site Les créations de Lyline", $emailText, $headers );
-          // Fonction qui permet l'envoi du mail.
+// \r\n : Pour aller à la ligne entre De : et Répondre à :
+          
+        mail($emailTo, "Un message provenant du site Les créations de Lyline", $emailText, $headers);
+// Fonction qui permet l'envoi du mail.
 
         $prenom = $nom = $email = $message ="";
-          // Permet de remettre les champs à blanc quand message est envoyé.
+// Permet de remettre les champs à blanc quand le message est envoyé via le formulaire de contact.
 
       }
   
@@ -92,7 +103,8 @@
 
     return filter_var($var, FILTER_VALIDATE_EMAIL);
 
-  } // vérifie si mail valide.
+  } 
+// vérifie si mail valide.
 
   function verifyInput($var) {
 
@@ -100,15 +112,14 @@
     $var = stripslashes($var);
     $var = htmlspecialchars($var);
 
-    // sécurité du code (ou nettoyage du code) : 
-    // trim empêche des ajouts inutiles tels que des espaces dans les champs de saisi.
-    // stripslashes enlève tous les \ (antislashes).
-    // htmlspecialchars empêche la modif de l'URL et donc le hacking.
+// sécurité du code (ou nettoyage du code) : 
+// trim empêche des ajouts inutiles tels que des espaces dans les champs de saisi.
+// stripslashes enlève tous les \ (antislashes).
+// htmlspecialchars empêche la modif de l'URL et donc le hacking.
 
     return $var;
   }
 ?>
-  <!-- $_SERVER = Variable Superglobale server -->
 
 <!---------------------------------------------------------------------------
   ---------------------------------- HTML 5 ---------------------------------
