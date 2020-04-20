@@ -160,48 +160,19 @@ p {
 /*------------------------------- CARROUSEL D'IMAGES ------------------------ */
 /* -------------------------------------------------------------------------- */
 
-#slider {
+#slide {
   width: 80%;
   margin: 0 auto;
   background: #fff;
   min-width: 480px;
-  font-size: 23px;
-  overflow: hidden;    
-  box-shadow: 0 0 7px 0 #cb8fff; 
-}
-/*overflow: hidden;  Maintien la structure du carrousel*/
-/* container  */
-
-figure {
-  position: relative;
-  width: 80%;
-  margin: 0;
-  padding: 0;
-  font-size: 0;
-  text-align: left;
-  animation: 20s slidy infinite;
-}
-/* container qui contient les images */
+  box-shadow: 0 0 7px 0 #fa8072; 
+} /* Stylisation de l'encadré */
 
 img {
-  width: 20%;
-  height: 80%;
-  float: left;
-}
-/* images contenues dans carrousel */
+    width: 400px;
+} /* Largeur des images et donc de l'encadré */
 
-@keyframes slidy {
-  0% { left: 0%; }
-  20% { left: 0%; }
-  25% { left: -100%; }
-  45% { left: -100%; }
-  50% { left: -200%; }
-  70% { left: -200%; }
-  75% { left: -300%; }
-  95% { left: -300%; }
-  100% { left: -400%; }
-}
-/* animations */
+
 
 /* -------------------------------------------------------------------------- */
 /*-------------------------- FORMULAIRE DE CONTACT -------------------------- */

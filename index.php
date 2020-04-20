@@ -182,15 +182,12 @@
     <br/><br/>
                             <!-- CARROUSEL D'IMAGES  -->
     
-    <section id="slider">
-      <figure>
-        <img src="images/borderlands-3-couv.jpg" alt="">
-        <img src="images/Borderlands-3-Moxxis-Heist-Key-Art.jpg" alt="">
-        <img src="images/Borderlands-3-trailer-Moze.jpg" alt="">
-        <img src="images/borderlands-3-couv.jpg" alt="">
-      </figure>
-    </section>
-  
+    <section id="slide">
+        <img src="images/img_1.jpg" alt="image" id="caroussel" onclick="caroussel();">
+        <img src="images/img_2.jpg" alt="image" id="caroussel" onclick="caroussel();">
+        <img src="images/img_3.jpg" alt="image" id="caroussel" onclick="caroussel();">
+        <img src="images/img_1.jpg" alt="image" id="caroussel" onclick="caroussel();">  
+    </section>        
 
     <br/><br/>
                           <!-- FORMULAIRE DE CONTACT -->  
@@ -238,5 +235,39 @@
   <footer>    
       <h2>Ici il y aura le footer</h2> 
   </footer> 
+  
+  
+                <!-- JAVASCRIPT -->
+                
+<script>
+    
+    function caroussel() {
+        
+        var image = 
+            document.getElementById('caroussel').getAttribute('src');
+    /* Permet de récupérer un attribut de l'élément récupéré (ici la source e l'image) */
+        
+            console.log(image);
+        
+        switch( image ) {
+            case 'images/img_1.jpg' :
+                document.getElementById('caroussel').src = 'images/images/img_1.jpg';
+            break;
+                
+            case 'images/img_2.jpg' :
+                document.getElementById('caroussel').src = 'images/img_2.jpg';
+            break;
+                
+            case 'images/img_3.jpg' :
+                document.getElementById('caroussel').src = 'images/img_3.jpg';
+            break;
+                
+            case 'images/img_1.jpg' :
+                document.getElementById('caroussel').src = 'images/img_1.jpg';
+            break;
+        }
+    }
+
+</script>       
 </body>
 </html>
