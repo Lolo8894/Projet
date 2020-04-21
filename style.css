@@ -166,7 +166,7 @@ p {
   background: #fff;
   min-width: 480px;
   box-shadow: 0 0 7px 0 #fa8072; 
-} /* Stylisation de l'encadré */
+} /* Stylisation de l'encadré avec la bordure ombrée et colorée */
 
 img {
     width: 400px;

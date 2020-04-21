@@ -247,7 +247,7 @@
             document.getElementById('caroussel').getAttribute('src');
     /* Permet de récupérer un attribut de l'élément récupéré (ici la source e l'image) */
         
-            //console.log(image);
+            console.log(image);
         
         switch( image ) {
             case 'images/img_1.jpg' :
