@@ -204,7 +204,7 @@ p {
 .fleche-gauche:hover {
     background:#000000a8;
     cursor: pointer;
-} /* Effet au survol sur flèche de gauche */
+}  /* Effet au survol sur flèche de gauche */
 
 .fleche_1 {
     display: inline-block;
