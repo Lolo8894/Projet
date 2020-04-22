@@ -182,11 +182,31 @@
     <br/><br/>
                             <!-- CARROUSEL D'IMAGES  -->
     
-    <section id="slide">
-        <img src="images/img_1.jpg" alt="image" id="caroussel" onclick="caroussel();">
-        <img src="images/img_2.jpg" alt="image" id="caroussel" onclick="caroussel();">
-        <img src="images/img_3.jpg" alt="image" id="caroussel" onclick="caroussel();">
-        <img src="images/img_1.jpg" alt="image" id="caroussel" onclick="caroussel();">  
+    <section id="galerie">
+       <div class="slide">
+                        <!-- Flèche de gauche et de droite -->
+          <div class="fleche-gauche"><span class="fleche_1"></span></div>
+          <div class="fleche-droite"><span class="fleche_2"></span></div>
+                            <!-- Text sur l'image-->
+
+            <div class="contient-legende"><p class="texte">Texte de la légende</p></div>
+
+                                <!-- Images -->
+           <div class="contient-image">
+                <img src="images/img_1.jpg" alt="image" id="carrousel">
+                    <p class="legende">Légende : Text-01</p>
+           </div>
+
+           <div class="contient-image">
+                <img src="images/img_2.jpg" alt="image" id="carrousel">
+                    <p class="legende">Légende : Text-02</p>
+           </div>
+
+           <div class="contient-image">
+                <img src="images/img_3.jpg" alt="image" id="carrousel">
+                    <p class="legende">Légende : Text-03</p>
+           </div>
+       </div>
     </section>        
 
     <br/><br/>
@@ -234,40 +254,6 @@
                 <!-- FOOTER -->
   <footer>    
       <h2>Ici il y aura le footer</h2> 
-  </footer> 
-  
-  
-                <!-- JAVASCRIPT -->
-                
-<script>
-    
-    function caroussel() {
-        
-        var image = 
-            document.getElementById('caroussel').getAttribute('src');
-    /* Permet de récupérer un attribut de l'élément récupéré (ici la source e l'image) */
-        
-            console.log(image);
-        
-        switch( image ) {
-            case 'images/img_1.jpg' :
-                document.getElementById('caroussel').src = 'images/images/img_1.jpg';
-            break;
-                
-            case 'images/img_2.jpg' :
-                document.getElementById('caroussel').src = 'images/img_2.jpg';
-            break;
-                
-            case 'images/img_3.jpg' :
-                document.getElementById('caroussel').src = 'images/img_3.jpg';
-            break;
-                
-            case 'images/img_1.jpg' :
-                document.getElementById('caroussel').src = 'images/img_1.jpg';
-            break;
-        }
-    }
-
-</script>       
+  </footer>
 </body>
 </html>

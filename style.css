@@ -15,6 +15,13 @@
 /*---------------------------------- BODY ----------------------------------- */
 /* -------------------------------------------------------------------------- */
 
+/*
+html, body {
+    padding: 10px 0px 0px 0px;
+    margin: 0;
+}
+VOIR SI SI EST UTILE AU CAROUSSEL */
+
 body {
   font-family: 'Varela Round', sans-serif;
   font-size: 15px;
@@ -160,17 +167,121 @@ p {
 /*------------------------------- CARROUSEL D'IMAGES ------------------------ */
 /* -------------------------------------------------------------------------- */
 
-#slide {
-  width: 80%;
-  margin: 0 auto;
-  background: #fff;
-  min-width: 480px;
-  box-shadow: 0 0 7px 0 #fa8072; 
-} /* Stylisation de l'encadré avec la bordure ombrée et colorée */
+                    /* CONTAINER DU CARROUSEL */
 
-img {
-    width: 400px;
-} /* Largeur des images et donc de l'encadré */
+#galerie {
+    margin: 0 auto; /* Permet de centrer le container */
+    background: #fff;
+    box-shadow: 0 0 7px 0 #fa8072; /* Contour coloré et fondu */
+    height: 500px; /* Hauteur du container */
+    max-width: 1090px; /* Règle la largueur max du container */
+    user-select: none; /* Texte situé sur le Carrousel non sélectionnable */
+}
+
+                        /* STYLE DU SLIDER */
+
+.slide {
+    width: 1090px;
+    height: 450px;
+    overflow: hidden;
+    position: relative; /* Permet de maitenir images dans le container */
+} /* Dimensions du container carrousel */
+
+.fleche-gauche {
+    width: 50px;
+    background-color: #00000036;
+    position: absolute;
+    left: 0;
+    z-index: 1;
+    transition: background 0.5s;
+    height: 72px;
+    top: 50%;
+    transform: translateY(-50%);
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+}
+
+.fleche-gauche:hover {
+    background:#000000a8;
+    cursor: pointer;
+} /* Effet au survol sur flèche de gauche */
+
+.fleche_1 {
+    display: inline-block;
+    border: 3px solid #f5f5f5;
+    width: 10px;
+    height: 10px;
+    border-left: none;
+    border-bottom: none;
+    margin: auto;
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    transform: rotateZ(-135deg);
+} /* Style de la flèche gauche + positionnement comme un chevron "<" */
+
+.fleche-droite {
+    right: 0;
+    width: 50px;
+    background-color: #00000036;
+    position: absolute;
+    left: auto;
+    z-index: 1;
+    transition: background 0.5s;
+    height: 72px;
+    top: 50%;
+    transform: translateY(-50%);
+    border-top-left-radius: 0px;
+    border-bottom-left-radius: 0px;
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+}
+
+.fleche-droite:hover {
+    background:#000000a8;
+    cursor: pointer;
+} /* Effet au survol sur flèche de droite */
+
+.fleche_2 {
+    display: inline-block;
+    border: 3px solid #f5f5f5;
+    width: 10px;
+    height: 10px;
+    border-left: none;
+    border-bottom: none;
+    margin: auto;
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    transform: rotateZ(45deg);
+} /* Style de la flèche droite + positionnement comme un chevron ">" */
+
+                        /* LEGENDE SUR L'IMAGE */
+
+.contient-legende {
+
+}
+
+.texte {
+
+}
+
+                        /* IMAGES DU CARROUSEL */
+
+.contient-image {
+    height: 500px;
+    position: absolute;
+} /* Hauteur du container + position par rapport à l'élément racine ou le premier élément */
+
+.contient-image img {
+    width: 1090px;
+    height: 590px;
+} /* Dimensions des images du carrousel largeur + hauteur */
+
 
 
 
